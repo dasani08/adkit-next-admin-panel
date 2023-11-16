@@ -6,15 +6,35 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predev": "ts-node --project ./tsconfig.node.json ./scripts/genAntdCss.tsx",
+    "prebuild": "cross-env NODE_ENV=production ts-node --project ./tsconfig.node.json ./scripts/genAntdCss.tsx"
   },
   "dependencies": {
+    "@ant-design/cssinjs": "^1.17.2",
+    "@ant-design/icons": "^5.2.6",
+    "@tanstack/react-query": "^5.4.3",
+    "@tinymce/tinymce-react": "^4.3.0",
+    "antd": "^5.10.2",
+    "axios": "^1.6.0",
+    "firebase": "^10.5.2",
+    "leaflet": "^1.9.4",
+    "lodash": "^4.17.21",
+    "next": "14.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.0"
+    "react-leaflet": "^4.2.1",
+    "recharts": "^2.9.0"
   },
   "devDependencies": {
+    "@ant-design/static-style-extract": "^1.0.2",
+    "@flydotio/dockerfile": "^0.4.10",
+    "@types/node": "^20.8.9",
+    "cross-env": "^7.0.3",
     "eslint": "^8",
-    "eslint-config-next": "14.0.0"
+    "eslint-config-next": "14.0.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
   }
 }
