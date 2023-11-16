@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Adkit Admin Template | Next.JS, React, Ant Design, Firebase</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Adkit Admin Template&rdquo; Documentation by &ldquo;dasani08&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Adkit Admin Template&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 15/11/2023<br>
+					By: dasani08<br>
+					Email: <a href="mailto:dcongthanh@icloud.com">dcongthanh@icloud.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my item. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="https://codecanyon.net/user/danani08">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">Project Structure</a></li>
+			<li><a href="#cssFiles">Routing</a></li>
+			<li><a href="#javascript">Theme Setting</a></li>
+			<li><a href="#3rdLibs">Libraries</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="htmlStructure"><strong>A) Project Structure</strong> - <a href="#toc">top</a></h3>
+		<h4>Top-level folders</h4>
+		<table>
+			<tbody>
+				<tr>
+					<td>src</td>
+					<td>Source folder</td>
+				</tr>
+				<tr>
+					<td>public</td>
+					<td>Static assets to be served</td>
+				</tr>
+				<tr>
+					<td>scripts</td>
+					<td>A custom script for extracting Ant Design stylesheet</td>
+				</tr>
+				<tr>
+					<td>template</td>
+					<td>Including code template for a page & its sub-component</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h4>Src-level folders</h4>
+		<table>
+			<tbody>
+				<tr>
+					<td>app</td>
+					<td>App router</td>
+				</tr>
+				<tr>
+					<td>components</td>
+					<td>Common components for the app</td>
+				</tr>
+				<tr>
+					<td>lib</td>
+					<td>Including common functions, hooks, utils</td>
+				</tr>
+				<tr>
+					<td>services</td>
+					<td>Backend services to get data from API</td>
+				</tr>
+				<tr>
+					<td>state</td>
+					<td>App State</td>
+				</tr>
+				<tr>
+					<td>theme</td>
+					<td>Theme configuration</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h4>App-level folders</h4>
+		<table>
+			<tbody>
+				<tr>
+					<td>_components</td>
+					<td>Shared components</td>
+				</tr>
+				<tr>
+					<td>(crm)</td>
+					<td>Including all pages for the admin panel. The folder name is fere to change if you needed. Changing of this folder name will not affect the current routing.</td>
+				</tr>
+				<tr>
+					<td>api</td>
+					<td>API Routes</td>
+				</tr>
+				<tr>
+					<td>auth</td>
+					<td>Authentication module</td>
+				</tr>
+				<tr>
+					<td>pages</td>
+					<td>Static pages</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+
+		
+		<h3 id="cssFiles"><strong>B) Routing</strong> - <a href="#toc">top</a></h3>
+
+		<p>There are 2 primary layouts which nested under the root layout.</p>
+		<p>The application was organized following by Next.js guideline which can be found at <a target="_blank" href="https://nextjs.org/docs/app/building-your-application/routing">https://nextjs.org/docs/app/building-your-application/routing</a> </p>
+
+		<table>
+			<tbody>
+				<tr>
+					<td>Root layout</td>
+					<td>/src/app/layout.js</td>
+				</tr>
+				<tr>
+					<td>App layout</td>
+					<td>/src/app/(crm)/layout.js</td>
+				</tr>
+				<tr>
+					<td>Auth layout</td>
+					<td>/src/app/auth/layout.js</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>Your new features should be placed into <b>src/app/(crm)</b> folder. Each folder in a route represents a route segment. Each route segment is mapped to a corresponding segment in a URL path.</p>
+
+		<img src="./assets/images/route-segments-to-path-segments.png" alt="Route Segmentss"/>
+		<i>Source from: next.js</i>
+
+		<hr>
+		
+		<h3 id="javascript"><strong>C) Theme Setting</strong> - <a href="#toc">top</a></h3>
+		
+		<p>If you would like to make a custom theme such as color, font size, border of web components, you can find all theme settings under <b>/src/theme/themeConfig.js</b></p>
+		
+		<p>Here is default configuraton for the Adkit Admin Template</p>
+<pre>
+const theme = {
+	token: {
+		fontSize: 14,
+		colorPrimary: '#00B96B',
+		borderRadius: 3,
+	},
+	components: {
+		Button: {
+		algorithm: true,
+		onlyIconSize: 14,
+		},
+	},
+};
+		
+export default theme;
+</pre>
+
+		<p style="color: red">All the theme configuration can be found on Ant Design website. <a href="https://ant.design/docs/react/customize-theme">https://ant.design/docs/react/customize-theme</a></p>
+
+		<hr>
+
+		<h3 id="3rdLibs"><strong>D) Libraries</strong> - <a href="#toc">top</a></h3>
+		
+		<table>
+			<tbody>
+				<tr>
+					<td>antd</td>
+					<td>Version 5.x.x</td>
+					<td>Ant Design</td>
+				</tr>
+				<tr>
+					<td>axios</td>
+					<td>Version 1.6</td>
+					<td>HTTP Client</td>
+				</tr>
+				<tr>
+					<td>@tinymce/tinymce-react</td>
+					<td>Version ^4.3.0</td>
+					<td>TinyMCE React Component</td>
+				</tr>
+				<tr>
+					<td>leaflet</td>
+					<td>Version ^1.9.4</td>
+					<td>Map Component</td>
+				</tr>
+				<tr>
+					<td>recharts</td>
+					<td>Version ^2.9.0</td>
+					<td>Charts</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<table>
+			<tbody>
+				<tr>
+					<th>Author</th>
+					<th>Source</th>
+				</tr>
+				<tr>
+					<td>David Waschbüsch</td>
+					<td>https://www.pexels.com/photo/a-white-flowers-with-green-leaves-9782305/</td>
+				</tr>
+				<tr>
+					<td>Line Knipst</td>
+					<td>https://www.pexels.com/photo/a-mountain-range-with-a-small-pond-in-the-foreground-18512532/</td>
+				</tr>
+				<tr>
+					<td>Tifeclicks</td>
+					<td>https://www.pexels.com/photo/smiling-man-with-bag-16001703/2/</td>
+				</tr>
+				<tr>
+					<td>Thiago Rosarii</td>
+					<td>https://www.pexels.com/photo/the-bride-by-thiago-rosarii-18988315/</td>
+				</tr>
+				<tr>
+					<td>Miguel Á. Padriñán</td>
+					<td>https://www.pexels.com/photo/white-clouds-on-blue-sky-19670/</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist.</p> 
+		
+		<p class="append-bottom alt large"><strong>Adkit Team</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
