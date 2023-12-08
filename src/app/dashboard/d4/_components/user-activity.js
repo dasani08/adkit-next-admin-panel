@@ -2,13 +2,8 @@
 import React from 'react';
 import { theme } from 'antd';
 import {
-  BarChart,
-  Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
   ResponsiveContainer,
   LineChart,
   Line,

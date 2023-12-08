@@ -14,7 +14,6 @@ import {
   LineChartOutlined,
   CopyOutlined,
   LinkOutlined,
-  CrownOutlined,
   MailOutlined,
   CommentOutlined,
   GoldOutlined,

@@ -1,6 +1,5 @@
 'use client';
 import { Avatar, Card, Flex, Badge } from 'antd';
-import { ClockCircleOutlined } from '@ant-design/icons';
 
 export default function BadgeColor() {
   return (

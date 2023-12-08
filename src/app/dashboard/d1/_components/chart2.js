@@ -1,13 +1,6 @@
 'use client';
 import React from 'react';
 import {
-  ComposedChart,
-  Line,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
   Legend,
   ResponsiveContainer,
   PieChart,

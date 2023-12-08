@@ -3,13 +3,10 @@ import React from 'react';
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
-  CartesianAxis,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from 'recharts';
 

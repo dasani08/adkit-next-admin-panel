@@ -12,7 +12,6 @@ import {
   Typography,
   Flex,
   Image,
-  Divider,
 } from 'antd';
 import {
   EditOutlined,

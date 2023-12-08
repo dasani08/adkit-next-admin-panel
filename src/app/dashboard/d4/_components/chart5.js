@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { Row, Col, Flex } from 'antd';
 
 export default function Chart5() {

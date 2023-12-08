@@ -1,8 +1,6 @@
 'use client';
 import { Card, Alert, Space, Button } from 'antd';
 import {
-  CheckCircleOutlined,
-  InfoCircleOutlined,
   CloseCircleOutlined,
 } from '@ant-design/icons';
 

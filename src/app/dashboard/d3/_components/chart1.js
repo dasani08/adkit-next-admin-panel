@@ -1,13 +1,11 @@
 'use client';
 import React from 'react';
 import {
-  Legend,
   ResponsiveContainer,
   PieChart,
   Pie,
   Cell,
   Label,
-  Customized,
 } from 'recharts';
 import { Row, Col, Flex, theme } from 'antd';
 

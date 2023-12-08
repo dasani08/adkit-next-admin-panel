@@ -4,7 +4,6 @@ import { Card } from 'antd';
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,

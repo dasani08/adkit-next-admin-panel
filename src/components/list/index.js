@@ -1,4 +1,4 @@
-import { Flex, Button } from 'antd';
+import { Flex } from 'antd';
 
 import styles from './style.module.css';
 import { useTheme } from '@/state/theme/theme-context';

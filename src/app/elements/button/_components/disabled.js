@@ -1,6 +1,5 @@
 'use client';
-import { Card, Button, Flex, Tooltip, Input } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import { Card, Button, Flex } from 'antd';
 
 export default function DisabledButtons() {
   return (

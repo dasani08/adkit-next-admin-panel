@@ -1,6 +1,5 @@
 'use client';
-import { Alert, Card, Tooltip, Avatar, Flex, Badge } from 'antd';
-import { UserOutlined, AntDesignOutlined } from '@ant-design/icons';
+import { Alert, Card, Avatar, Flex, Badge } from 'antd';
 
 export default function AvatarStatus() {
   return (

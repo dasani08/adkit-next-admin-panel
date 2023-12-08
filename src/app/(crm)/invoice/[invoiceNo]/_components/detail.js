@@ -6,13 +6,9 @@ import {
   Tooltip,
   Button,
   Dropdown,
-  Tabs,
   Table,
-  Tag,
-  Descriptions,
   Typography,
   Flex,
-  Image,
   Divider,
   Row,
   Col,
@@ -28,7 +24,6 @@ import {
   EllipsisOutlined,
   AuditOutlined,
 } from '@ant-design/icons';
-import Link from 'next/link';
 
 const Toolbox = () => (
   <Space>

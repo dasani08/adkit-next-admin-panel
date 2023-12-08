@@ -1,5 +1,4 @@
 'use client';
-import { Children } from 'react';
 import { Flex, Card, Typography } from 'antd';
 
 import style from './card.module.css';

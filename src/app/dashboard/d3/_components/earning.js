@@ -2,15 +2,10 @@
 import React from 'react';
 import {
   ComposedChart,
-  Line,
   Area,
-  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
-  Legend,
-  Scatter,
   ResponsiveContainer,
 } from 'recharts';
 

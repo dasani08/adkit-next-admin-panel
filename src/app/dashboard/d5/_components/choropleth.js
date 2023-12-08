@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card } from 'antd';
-import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import { useMap } from 'react-leaflet/hooks';
 
 import L from 'leaflet';
