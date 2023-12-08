@@ -19,6 +19,7 @@ import {
   Upload,
   Grid,
   Dropdown,
+  theme,
 } from 'antd';
 import {
   PlusOutlined,
@@ -45,6 +46,7 @@ export default function NewSaleOrder() {
   };
   const [isAffixed, setIsAffixed] = React.useState(false);
   const screens = useBreakpoint();
+  const { token } = theme.useToken();
   const affix = (
     <Affix offsetTop={16} key={1} onChange={(affixed) => setIsAffixed(affixed)}>
       <Space
@@ -340,7 +342,7 @@ export default function NewSaleOrder() {
                 <Divider />
                 <Flex
                   justify="space-between"
-                  style={{ padding: 8, backgroundColor: '#efefef' }}
+                  style={{ padding: 8, backgroundColor: token.footerBg }}
                 >
                   <Typography.Text type="secondary">Total ($)</Typography.Text>
                   <Typography.Text type="secondary">0.00</Typography.Text>

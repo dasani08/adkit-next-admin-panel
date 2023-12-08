@@ -18,6 +18,7 @@ import {
   DownloadOutlined,
   UploadOutlined,
 } from '@ant-design/icons';
+import { useRouter } from 'next/navigation';
 
 const gridStyle = {
   width: '50%',
@@ -26,6 +27,12 @@ const gridStyle = {
 };
 
 export default function ItemPage() {
+  const router = useRouter();
+
+  const newItemHandle = () => {
+    router.push('/item/new');
+  };
+
   return (
     <Card
       title="ITEMS"
@@ -94,7 +101,7 @@ export default function ItemPage() {
         </Space>
       }
     >
-      <Card.Grid style={gridStyle}>
+      <Card.Grid style={gridStyle} onClick={newItemHandle}>
         <Space
           direction="vertical"
           styles={{
@@ -111,7 +118,7 @@ export default function ItemPage() {
           <Button type="primary">New Item Group</Button>
         </Space>
       </Card.Grid>
-      <Card.Grid style={gridStyle}>
+      <Card.Grid style={gridStyle} onClick={newItemHandle}>
         <Space direction="vertical">
           <Typography.Text strong>Items</Typography.Text>
           <Image width={150} preview={false} alt="" src="/tshirt.png" />
@@ -121,7 +128,7 @@ export default function ItemPage() {
           <Button type="primary">New Item</Button>
         </Space>
       </Card.Grid>
-      <Card.Grid style={gridStyle}>
+      <Card.Grid style={gridStyle} onClick={newItemHandle}>
         <Space direction="vertical">
           <Typography.Text strong>Composite Items</Typography.Text>
           <Image width={150} preview={false} alt="" src="/composite-item.png" />
@@ -131,7 +138,7 @@ export default function ItemPage() {
           <Button type="primary">New Composite Item</Button>
         </Space>
       </Card.Grid>
-      <Card.Grid style={gridStyle}>
+      <Card.Grid style={gridStyle} onClick={newItemHandle}>
         <Space direction="vertical">
           <Typography.Text strong>Price Lists</Typography.Text>
           <Image width={150} preview={false} alt="" src="/price-list.png" />

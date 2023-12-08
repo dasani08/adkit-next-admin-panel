@@ -17,14 +17,11 @@ export default function ListOrder() {
       title="SALE ORDERS"
       style={{ margin: '16px 0' }}
       extra={[
-        <Button
-          key={'new-customer'}
-          icon={<PlusOutlined />}
-          type="primary"
-          href="/order/new"
-        >
-          NEW
-        </Button>,
+        <Link key={'new-customer'} href="/order/new">
+          <Button icon={<PlusOutlined />} type="primary">
+            NEW
+          </Button>
+        </Link>,
       ]}
     >
       <ListPage

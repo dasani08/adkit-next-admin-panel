@@ -195,7 +195,9 @@ export default function CustomerDetail() {
               <span>No records found</span>
               <Button icon={<PlusOutlined />}>New Task</Button>
               <Button icon={<NotificationOutlined />}>New Event</Button>
-              <Button icon={<PhoneOutlined />}>New Call</Button>
+              <Button icon={<PhoneOutlined />} type="primary">
+                New Call
+              </Button>
             </Space>
           ),
         }}

@@ -10,10 +10,12 @@ import {
   Table,
   Image,
   InputNumber,
+  theme,
 } from 'antd';
 import { InfoCircleOutlined } from '@ant-design/icons';
 
 export default function NewInvoiceForm() {
+  const { token } = theme.useToken();
   return (
     <Space direction="vertical" style={{ width: '100%' }}>
       <Form labelCol={{ span: 6 }} colon={false} labelAlign="left">
@@ -183,7 +185,9 @@ export default function NewInvoiceForm() {
                 $00.00
               </Table.Summary.Cell>
             </Table.Summary.Row>
-            <Table.Summary.Row style={{ backgroundColor: '#efefef' }}>
+            <Table.Summary.Row
+              style={{ padding: 8, backgroundColor: token.footerBg }}
+            >
               <Table.Summary.Cell colSpan={2} />
               <Table.Summary.Cell colSpan={4} align="left">
                 <Typography.Text strong>Total</Typography.Text>

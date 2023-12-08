@@ -16,14 +16,11 @@ export default function InvoicePage() {
       title="INVOICES"
       style={{ margin: '16px 0' }}
       extra={[
-        <Button
-          key={'new-invoice'}
-          icon={<PlusOutlined />}
-          type="primary"
-          href="/invoice/new"
-        >
-          NEW
-        </Button>,
+        <Link key={'new-invoice'} href="/invoice/new">
+          <Button icon={<PlusOutlined />} type="primary">
+            NEW
+          </Button>
+        </Link>,
       ]}
     >
       <ListPage

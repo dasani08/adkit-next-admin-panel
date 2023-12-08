@@ -1,15 +1,15 @@
 'use client';
 import React from 'react';
 import { ConfigProvider } from 'antd';
-import theme from '@/theme/themeConfig';
+import light from '@/theme/themeConfig';
 
 import ProtectedRoute from '@/components/protected-route';
-import Layout from '@/app/_components/layout';
+import Layout from '@/components/layouts/main-layout';
 
 export default function MainLayout({ children }) {
   return (
     <ProtectedRoute>
-      <ConfigProvider theme={theme}>
+      <ConfigProvider theme={light}>
         <Layout>{children}</Layout>
       </ConfigProvider>
     </ProtectedRoute>

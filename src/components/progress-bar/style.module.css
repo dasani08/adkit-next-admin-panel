@@ -1,0 +1,35 @@
+.adProgressBar {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  padding: 16px 0;
+}
+
+.adProgressBarOuter {
+  width: 100%;
+}
+
+.adProgressBarInner {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 100px;
+}
+
+.adProgressBarBg {
+  position: relative;
+  border-radius: 100px;
+}
+
+.adProgressBarDesc {
+  position: absolute;
+}
+
+.adProgressBarLabel {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

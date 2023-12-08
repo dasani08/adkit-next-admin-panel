@@ -1,0 +1,10 @@
+.cardHead {
+  margin-bottom: 16px;
+}
+
+.cardValue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21pt;
+}

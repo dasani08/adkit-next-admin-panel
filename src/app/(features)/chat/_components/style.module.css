@@ -1,0 +1,23 @@
+.chatBox {
+  margin-bottom: 8px;
+}
+
+.chatMsg {
+  display: inline-block;
+}
+
+.chatContent {
+}
+
+.chatTimestamp {
+  display: block;
+  text-align: right;
+}
+
+.theme-light .selectedPerson {
+  background-color: aqua;
+}
+
+.theme-dark .selectedPerson {
+
+}
