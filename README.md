@@ -2,6 +2,9 @@
   <img src="https://adkit-admin-panel.netlify.app/photos/D&L.png">
 </p>
 <p>
+  <img src="https://adkit-admin-panel.netlify.app/photos/Dashboard.png">
+</p>
+<p>
   <img src="https://adkit-admin-panel.netlify.app/photos/Item.png">
 </p>
 <p>
@@ -35,10 +38,14 @@
 <ul>
   <li>Five admin dashboards</li>
   <li>Dark & light versions</li>
+  <li>Responsive layout - Mobile friendly</li>
   <li>Pre-built app template with list view & data entry form for new item</li>
   <li>Authentication (Integrated firebase authentication)</li>
-  
   <li>Ready to use components from Ant.Design</li>
+  <li>Theme customization for the entire application or any specific component</li>
+  <li>Free Updates</li>
+  <li>Free Customer Support</li>
+  <li>Well Documented</li>
 </ul>
 
 <h4>Core Library</h4>
