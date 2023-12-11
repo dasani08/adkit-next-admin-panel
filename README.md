@@ -1,15 +1,54 @@
-# Adkit Admin Template | Next.JS, React, Ant Design, Firebase
+<p>
+  <img src="https://adkit-admin-panel.netlify.app/photos/D&L.png">
+</p>
+<p>
+  <img src="https://adkit-admin-panel.netlify.app/photos/Item.png">
+</p>
+<p>
+  <img src="https://adkit-admin-panel.netlify.app/photos/Customer.png">
+</p>
+<p>
+  <img src="https://adkit-admin-panel.netlify.app/photos/Sale Order.png">
+</p>
+<p>
+  <img src="https://adkit-admin-panel.netlify.app/photos/Invoice.png">
+</p>
+<p>
+  <img src="https://adkit-admin-panel.netlify.app/photos/Location.png">
+</p>
+<p>
+  <img src="https://adkit-admin-panel.netlify.app/photos/Mail.png">
+</p>
+<p>
+  <img src="https://adkit-admin-panel.netlify.app/photos/More.png">
+</p>
+
+# Adkit - Nextjs Admin Template | Next.JS, React, Ant Design, Firebase
 
 <h3>Introduction</h3>
 
-<p><b>Adkit</b> is an admin panel which was built on top of <b>Next.js</b> Framework and inspired by Zoho. All the UI/UX are supported by <b>Ant Design</b> and fully customized to satisfy UI diversity from business or brand requirements.</p>
+<p><b>Adkit</b> is admin panel which was built on top of <b>Next.js</b> Framework and inspired by Zoho. All the UI/UX are supported by <b>Ant Design</b> and fully customized to satisfy UI diversity from business or brand requirements.</p>
 
-<p>It covers most of common features such as dashboard with statistics, item management, report, chat, email, calendar, email, etc. By prodiving ready to use UI/UX templates, it will help you to speed up your application development.</p>
+<p>It covers most of common features such as dashboard with statistics, item management, report, chat, email, calendar, email. chat and more. By prodiving ready to use UI/UX templates, it will help you to speed up your application development.</p>
 
-<h4>UI/UX Features</h4>
+<h4>Core Features</h4>
 <ul>
-  <li>Admin Dashboard</li>
+  <li>Five admin dashboards</li>
+  <li>Dark & light versions</li>
+  <li>Pre-built app template with list view & data entry form for new item</li>
   <li>Authentication (Integrated firebase authentication)</li>
+  
+  <li>Ready to use components from Ant.Design</li>
+</ul>
+
+<h4>Core Library</h4>
+<ul>
+  <li>NextJs</li>
+  <li>Ant Design</li>
+</ul>
+
+<h4>Pre-built Applications</h4>
+<ul>
   <li>Item Management</li>
   <li>Customer Management</li>
   <li>Sales Order Management</li>

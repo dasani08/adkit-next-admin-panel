@@ -14,6 +14,7 @@ import {
   Image,
   Tooltip,
   Badge,
+  Drawer,
   theme,
 } from 'antd';
 import {
@@ -43,13 +44,16 @@ export default function ChatPage() {
   const {
     token: { colorBgElevated },
   } = theme.useToken();
+  const onClose = () => {
+    setOpenInfo(false);
+  };
   return (
     <Card
       bodyStyle={{
         height: 'calc(100vh - 200px)',
       }}
     >
-      <Row style={{ height: '100%' }} gutter={16}>
+      <Row style={{ height: '100%', flexFlow: 'row nowrap' }} gutter={16}>
         <Col
           flex="300px"
           style={{
@@ -492,166 +496,174 @@ export default function ChatPage() {
             </Flex>
           </Flex>
         </Col>
-
-        {openInfo && (
-          <Col flex="300px">
-            <Flex justify="center">
-              <Space
-                direction="vertical"
-                styles={{ item: { textAlign: 'center' } }}
+        <Drawer
+          placement="right"
+          closable={true}
+          onClose={onClose}
+          open={openInfo}
+          getContainer={false}
+          mask={false}
+        >
+          <Flex justify="center">
+            <Space
+              direction="vertical"
+              styles={{ item: { textAlign: 'center' } }}
+            >
+              <Badge
+                dot
+                offset={[-3, 54]}
+                styles={{
+                  indicator: {
+                    width: '12px',
+                    height: '12px',
+                  },
+                }}
+                text=""
+                color={'#52c41a'}
               >
-                <Badge
-                  dot
-                  offset={[-3, 54]}
-                  styles={{
-                    indicator: {
-                      width: '12px',
-                      height: '12px',
-                    },
-                  }}
-                  text=""
-                  color={'#52c41a'}
-                >
-                  <Avatar
-                    size={64}
-                    src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+                <Avatar
+                  size={64}
+                  src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+                />
+              </Badge>
+              <Typography.Text strong>Thanh Dang</Typography.Text>
+            </Space>
+          </Flex>
+          <Tabs
+            items={[
+              {
+                key: '1',
+                label: 'Media',
+                children: (
+                  <Image.PreviewGroup
+                    preview={{
+                      onChange: (current, prev) =>
+                        console.log(
+                          `current index: ${current}, prev index: ${prev}`,
+                        ),
+                    }}
+                  >
+                    <Image
+                      alt="1"
+                      width={90}
+                      src="/photos/pexels-thiago-rosarii-18988315.jpg"
+                      style={{ padding: 4 }}
+                    />
+                    <Image
+                      alt="2"
+                      width={90}
+                      src="/photos/pexels-tifeclicks-16001703.jpg"
+                      style={{ padding: 4 }}
+                    />
+                    <Image
+                      alt="3"
+                      width={90}
+                      src="/photos/pexels-line-knipst-18512532.jpg"
+                      style={{ padding: 4 }}
+                    />
+                    <Image
+                      alt="4"
+                      width={90}
+                      src="/photos/pexels-david-9782305.jpg"
+                      style={{ padding: 4 }}
+                    />
+                  </Image.PreviewGroup>
+                ),
+              },
+              {
+                key: '2',
+                label: 'Files',
+                children: (
+                  <Table
+                    showHeader={false}
+                    size="small"
+                    pagination={false}
+                    dataSource={[
+                      {
+                        icon: 'pdf',
+                        fileName: 'INV_0001.pdf',
+                        fileSize: '200.09 KB',
+                      },
+                      {
+                        icon: 'excel',
+                        fileName: 'ITEM_002.csv',
+                        fileSize: '100.09 KB',
+                      },
+                    ]}
+                    columns={[
+                      {
+                        key: 'Icon',
+                        dataIndex: 'icon',
+                        render: (icon) => {
+                          if (icon === 'pdf') return <FilePdfOutlined />;
+                          if (icon === 'excel') return <FileExcelOutlined />;
+                        },
+                      },
+                      {
+                        key: 'File Name',
+                        dataIndex: 'fileName',
+                        render: (fileName, { fileSize }) => (
+                          <Tooltip title="Click to download">
+                            <Space direction="vertical">
+                              <Typography.Text strong>
+                                {fileName}
+                              </Typography.Text>
+                              <Typography.Text type="secondary">
+                                {fileSize}
+                              </Typography.Text>
+                            </Space>
+                          </Tooltip>
+                        ),
+                      },
+                    ]}
                   />
-                </Badge>
-                <Typography.Text strong>Thanh Dang</Typography.Text>
-              </Space>
-            </Flex>
-            <Tabs
-              items={[
-                {
-                  key: '1',
-                  label: 'Media',
-                  children: (
-                    <Image.PreviewGroup
-                      preview={{
-                        onChange: (current, prev) =>
-                          console.log(
-                            `current index: ${current}, prev index: ${prev}`,
-                          ),
-                      }}
-                    >
-                      <Image
-                        alt="1"
-                        width={90}
-                        src="/photos/pexels-thiago-rosarii-18988315.jpg"
-                      />
-                      <Image
-                        alt="2"
-                        width={90}
-                        src="/photos/pexels-tifeclicks-16001703.jpg"
-                      />
-                      <Image
-                        alt="3"
-                        width={90}
-                        src="/photos/pexels-line-knipst-18512532.jpg"
-                      />
-                      <Image
-                        alt="4"
-                        width={90}
-                        src="/photos/pexels-david-9782305.jpg"
-                      />
-                    </Image.PreviewGroup>
-                  ),
-                },
-                {
-                  key: '2',
-                  label: 'Files',
-                  children: (
-                    <Table
-                      showHeader={false}
-                      size="small"
-                      pagination={false}
-                      dataSource={[
-                        {
-                          icon: 'pdf',
-                          fileName: 'INV_0001.pdf',
-                          fileSize: '200.09 KB',
+                ),
+              },
+              {
+                key: '3',
+                label: 'Links',
+                children: (
+                  <Table
+                    showHeader={false}
+                    size="small"
+                    pagination={false}
+                    dataSource={[
+                      {
+                        icon: 'pdf',
+                        linkName: 'Link to the attachment 1',
+                      },
+                      {
+                        icon: 'pdf',
+                        linkName: 'Link to the attachment 2',
+                      },
+                    ]}
+                    columns={[
+                      {
+                        key: 'Icon',
+                        render: () => {
+                          return <LinkOutlined />;
                         },
-                        {
-                          icon: 'excel',
-                          fileName: 'ITEM_002.csv',
-                          fileSize: '100.09 KB',
-                        },
-                      ]}
-                      columns={[
-                        {
-                          key: 'Icon',
-                          dataIndex: 'icon',
-                          render: (icon) => {
-                            if (icon === 'pdf') return <FilePdfOutlined />;
-                            if (icon === 'excel') return <FileExcelOutlined />;
-                          },
-                        },
-                        {
-                          key: 'File Name',
-                          dataIndex: 'fileName',
-                          render: (fileName, { fileSize }) => (
-                            <Tooltip title="Click to download">
-                              <Space direction="vertical">
-                                <Typography.Text strong>
-                                  {fileName}
-                                </Typography.Text>
-                                <Typography.Text type="secondary">
-                                  {fileSize}
-                                </Typography.Text>
-                              </Space>
-                            </Tooltip>
-                          ),
-                        },
-                      ]}
-                    />
-                  ),
-                },
-                {
-                  key: '3',
-                  label: 'Links',
-                  children: (
-                    <Table
-                      showHeader={false}
-                      size="small"
-                      pagination={false}
-                      dataSource={[
-                        {
-                          icon: 'pdf',
-                          linkName: 'Link to the attachment 1',
-                        },
-                        {
-                          icon: 'pdf',
-                          linkName: 'Link to the attachment 2',
-                        },
-                      ]}
-                      columns={[
-                        {
-                          key: 'Icon',
-                          render: () => {
-                            return <LinkOutlined />;
-                          },
-                        },
-                        {
-                          key: 'File Name',
-                          dataIndex: 'linkName',
-                          render: (linkName) => (
-                            <Tooltip title="Click to open">
-                              <Space direction="vertical">
-                                <Typography.Text strong>
-                                  {linkName}
-                                </Typography.Text>
-                              </Space>
-                            </Tooltip>
-                          ),
-                        },
-                      ]}
-                    />
-                  ),
-                },
-              ]}
-            />
-          </Col>
-        )}
+                      },
+                      {
+                        key: 'File Name',
+                        dataIndex: 'linkName',
+                        render: (linkName) => (
+                          <Tooltip title="Click to open">
+                            <Space direction="vertical">
+                              <Typography.Text strong>
+                                {linkName}
+                              </Typography.Text>
+                            </Space>
+                          </Tooltip>
+                        ),
+                      },
+                    ]}
+                  />
+                ),
+              },
+            ]}
+          />
+        </Drawer>
       </Row>
     </Card>
   );
