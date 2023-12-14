@@ -25,6 +25,9 @@ import {
 } from '@ant-design/icons';
 import Link from 'next/link';
 
+import BackBtn from '@/components/back-button';
+import useTableScroll from '@/lib/hooks/useTblScroll';
+
 const Toolbox = () => (
   <Space>
     <Space.Compact block>
@@ -81,6 +84,7 @@ const Toolbox = () => (
 );
 
 export default function OrderDetailPage({ orderNo }) {
+  const scrollX = useTableScroll();
   const tabList = [
     {
       key: 'PACKAGES',
@@ -89,6 +93,7 @@ export default function OrderDetailPage({ orderNo }) {
         <Table
           rowKey={'id'}
           pagination={false}
+          scroll={{ x: scrollX }}
           columns={[
             {
               title: 'PACKAGE SUP#',
@@ -142,6 +147,9 @@ export default function OrderDetailPage({ orderNo }) {
       children: (
         <Table
           showHeader={false}
+          pagination={false}
+          scroll={{ x: scrollX }}
+          size="small"
           columns={[
             {
               title: 'Icon',
@@ -169,7 +177,7 @@ export default function OrderDetailPage({ orderNo }) {
             {
               title: 'Status',
               key: 'Status',
-              width: 200,
+              width: 150,
               render: () => 'APPROVED',
             },
             {
@@ -190,6 +198,7 @@ export default function OrderDetailPage({ orderNo }) {
             {
               title: 'Amount',
               key: 'Amount',
+              width: 150,
               render: () => (
                 <Space direction="vertical" style={{ rowGap: 0 }}>
                   <Typography.Text type="secondary">Amount</Typography.Text>
@@ -222,10 +231,7 @@ export default function OrderDetailPage({ orderNo }) {
     },
   ];
   return (
-    <Card
-      title={<Button type="text" icon={<ArrowLeftOutlined />} />}
-      extra={<Toolbox />}
-    >
+    <Card title={<BackBtn />} extra={<Toolbox />}>
       <Tabs items={tabList} style={{ marginBottom: 16 }} />
       <Descriptions colon={false} layout="vertical" size="small" column={2}>
         <Descriptions.Item
@@ -255,18 +261,20 @@ export default function OrderDetailPage({ orderNo }) {
             direction="vertical"
             style={{
               paddingLeft: 8,
+              width: '100%',
+              maxWidth: 250,
               borderLeft: '3px solid #f50',
             }}
           >
-            <Flex justify="space-between" style={{ width: 200 }}>
+            <Flex justify="space-between">
               <span>Order</span>
               <Tag color="#87d068">CLOSED</Tag>
             </Flex>
-            <Flex justify="space-between" style={{ width: 200 }}>
+            <Flex justify="space-between">
               <span>Invoice</span>
               <Tag>Invoiced</Tag>
             </Flex>
-            <Flex justify="space-between" style={{ width: 200 }}>
+            <Flex justify="space-between">
               <span>Shipment</span>
               <Tag>Fulfilled</Tag>
             </Flex>
@@ -275,6 +283,8 @@ export default function OrderDetailPage({ orderNo }) {
         <Descriptions.Item label="ORDER DATE">01/01/2023</Descriptions.Item>
       </Descriptions>
       <Table
+        scroll={{ x: scrollX }}
+        size="small"
         columns={[
           {
             title: 'ITEMS & DESCRIPTION',

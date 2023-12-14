@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "predev": "ts-node --project ./tsconfig.node.json ./scripts/genAntdCss.tsx",
-    "prebuild": "cross-env NODE_ENV=production ts-node --project ./tsconfig.node.json ./scripts/genAntdCss.tsx"
+    "prebuild": "cross-env NODE_ENV=production ts-node --project ./tsconfig.node.json ./scripts/genAntdCss.tsx",
+    "g:page": "hygen page new"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.17.2",
@@ -22,6 +23,7 @@
     "leaflet": "^1.9.4",
     "lodash": "^4.17.21",
     "next": "14.0.0",
+    "prismjs": "^1.29.0",
     "react": "^18",
     "react-dom": "^18",
     "react-leaflet": "^4.2.1",
@@ -35,6 +37,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
+    "hygen": "^6.2.11",
     "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"

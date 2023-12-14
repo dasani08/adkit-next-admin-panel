@@ -5,18 +5,18 @@ import {
   Button,
   Typography,
   Image,
-  Radio,
   Dropdown,
   Tooltip,
+  Segmented,
 } from 'antd';
 import {
   PlusOutlined,
   SettingOutlined,
-  InsertRowAboveOutlined,
   AppstoreOutlined,
   MenuOutlined,
   DownloadOutlined,
   UploadOutlined,
+  BarsOutlined,
 } from '@ant-design/icons';
 import { useRouter } from 'next/navigation';
 
@@ -42,18 +42,27 @@ export default function ItemPage() {
             New
           </Button>
           <Button icon={<SettingOutlined />} />
-          <Radio.Group value={'table'}>
-            <Radio.Button value={'table'}>
-              <Tooltip title="Table">
-                <InsertRowAboveOutlined />
-              </Tooltip>
-            </Radio.Button>
-            <Radio.Button value={'thumb'}>
-              <Tooltip title="Grid">
-                <AppstoreOutlined />
-              </Tooltip>
-            </Radio.Button>
-          </Radio.Group>
+          <Segmented
+            defaultValue={'Grid'}
+            options={[
+              {
+                value: 'Table',
+                icon: (
+                  <Tooltip title="Table">
+                    <BarsOutlined />
+                  </Tooltip>
+                ),
+              },
+              {
+                value: 'Grid',
+                icon: (
+                  <Tooltip title="Grid">
+                    <AppstoreOutlined />
+                  </Tooltip>
+                ),
+              },
+            ]}
+          />
           <Dropdown
             menu={{
               items: [

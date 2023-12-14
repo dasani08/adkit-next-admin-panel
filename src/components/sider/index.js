@@ -17,6 +17,8 @@ import {
   MailOutlined,
   CommentOutlined,
   GoldOutlined,
+  StarOutlined,
+  ReadOutlined,
 } from '@ant-design/icons';
 import Link from 'next/link';
 
@@ -81,14 +83,36 @@ const items = [
     getItem(<Link href={'/email'}>Email</Link>, 'Email', <MailOutlined />),
     getItem(<Link href={'/chat'}>Chat</Link>, 'Chat', <CommentOutlined />),
   ]),
-  getItem('Components', 'Components', <GoldOutlined />, [
-    getItem(<Link href={'/elements/alert'}>Alert</Link>, 'Alert'),
-    getItem(<Link href={'/elements/button'}>Button</Link>, 'Button'),
+  getItem('UI/UX', 'UI/UX', <GoldOutlined />, [
+    getItem(
+      <Link href={'/elements/antd'}>Antd Components</Link>,
+      'Antd Components',
+      <StarOutlined />,
+    ),
+    getItem(
+      <Link href={'/elements/table'}>Table</Link>,
+      'Table',
+      <StarOutlined />,
+    ),
+    getItem(
+      <Link href={'/elements/list-page'}>ListPage</Link>,
+      'ListPage',
+      <StarOutlined />,
+    ),
+    getItem(
+      <Link href={'/elements/forms'}>Forms</Link>,
+      'Forms',
+      <StarOutlined />,
+    ),
   ]),
   {
     type: 'divider',
   },
-  getItem(<Link href={'/chart'}>Charts</Link>, 'Charts', <LineChartOutlined />),
+  getItem(
+    <Link href={'/chart/bar'}>Charts</Link>,
+    'Charts',
+    <LineChartOutlined />,
+  ),
   {
     type: 'divider',
   },
@@ -106,7 +130,19 @@ const items = [
       'Register',
       <LinkOutlined />,
     ),
+    getItem(
+      <Link href={'/pages/pricing'}>Pricing</Link>,
+      'Pricing',
+      <LinkOutlined />,
+    ),
   ]),
+  getItem(
+    <Link target="_blank" href={'https://adkit-admin-panel.netlify.app'}>
+      Docs
+    </Link>,
+    'Docs',
+    <ReadOutlined />,
+  ),
 ];
 
 export default function _Sider() {
@@ -123,7 +159,9 @@ export default function _Sider() {
 
   return (
     <Sider theme={theme} collapsible onCollapse={onCollapse} breakpoint="md">
-      <div className="demo-logo-vertical">{logo}</div>
+      <div className="demo-logo-vertical">
+        <Link href={'/'}>{logo}</Link>
+      </div>
       <Menu
         theme={theme}
         defaultSelectedKeys={['1']}

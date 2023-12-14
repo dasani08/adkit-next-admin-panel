@@ -11,12 +11,14 @@ import {
 } from 'antd';
 import { ArrowLeftOutlined, EllipsisOutlined } from '@ant-design/icons';
 
+import BackBtn from '@/components/back-button';
+
 export default function NameCard() {
   const [editableTitle, setEditableTitle] = React.useState('—');
   return (
     <Card
       style={{ margin: '16px 0' }}
-      title={<Button type="text" icon={<ArrowLeftOutlined />} />}
+      title={<BackBtn />}
       extra={
         <Space>
           <Button href="/email" key={'1'} ghost type="primary">

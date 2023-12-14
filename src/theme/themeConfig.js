@@ -3,6 +3,7 @@ const light = {
     fontSize: 14,
     colorPrimary: '#00B96B',
     borderRadius: 3,
+    bgPricingColor: '#DFFEEA',
   },
   components: {
     Button: {
@@ -41,6 +42,7 @@ const dark = {
     colorWarningBg: '#ffc323',
     colorInfoBg: '#3f98de',
     colorSuccessBg: '#00B96B',
+    bgPricingColor: '#00804a',
   },
   components: {
     Button: {

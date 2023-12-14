@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import { Card, Flex, Space, Button, Tooltip } from 'antd';
-import { ArrowLeftOutlined } from '@ant-design/icons';
+import { Card, Flex, Space, Button } from 'antd';
 
 import PageContent from '@/components/page-content';
 import NewInvoiceForm from '@/components/shared/NewInvoiceForm';
+import BackBtn from '@/components/back-button';
+import InvoicePage from './components';
 
 export default function Page() {
   return (
@@ -21,22 +22,7 @@ export default function Page() {
         },
       ]}
     >
-      <Card
-        style={{ margin: '16px 0' }}
-        title={
-          <Tooltip title="Back">
-            <Button type="text" icon={<ArrowLeftOutlined />} />
-          </Tooltip>
-        }
-      >
-        <NewInvoiceForm />
-        <Flex align="center" justify="end">
-          <Space style={{ margin: '16px 0' }}>
-            <Button>CANCEL</Button>
-            <Button type="primary">SAVE & CLOSE</Button>
-          </Space>
-        </Flex>
-      </Card>
+      <InvoicePage />
     </PageContent>
   );
 }

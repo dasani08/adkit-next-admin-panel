@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
-import { Form, Input, Button, Row, Col } from 'antd';
+import { Form, Input, Button, Row, Col, Typography } from 'antd';
+import LogoFull from '@/components/logo';
 
-export default function LoginForm() {
+export default function SignupForm() {
   const [form] = Form.useForm();
   return (
     <Form
@@ -19,8 +20,12 @@ export default function LoginForm() {
       autoComplete="off"
       layout="vertical"
     >
+      <LogoFull fill={'#00B96B'} style={{ width: '100%', height: 44 }} />
       <Form.Item style={{ textAlign: 'center', fontSize: 30 }}>
-        <h3>Register</h3>
+        <h3 style={{ fontSize: 30, color: '#00804a' }}>Sign up</h3>
+        <Typography.Text type="secondary">
+          Already have an account? <Typography.Link>Sign in</Typography.Link>
+        </Typography.Text>
       </Form.Item>
       <Row gutter={16}>
         <Col span={12}>
@@ -73,7 +78,7 @@ export default function LoginForm() {
         <Input.Password />
       </Form.Item>
       <Form.Item>
-        <Button type="primary" htmlType="submit">
+        <Button size="large" block type="primary" htmlType="submit">
           Sign up
         </Button>
       </Form.Item>

@@ -23,6 +23,9 @@
   <img src="https://adkit-admin-panel.netlify.app/photos/Mail.png">
 </p>
 <p>
+  <img src="https://adkit-admin-panel.netlify.app/photos/Pricing.png">
+</p>
+<p>
   <img src="https://adkit-admin-panel.netlify.app/photos/More.png">
 </p>
 

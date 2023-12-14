@@ -2,7 +2,7 @@ import { Flex, FloatButton } from 'antd';
 import { ConfigProvider } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
 
-import light from '@/theme/themeConfig';
+import theme from '@/theme/themeConfig';
 
 const boxStyle = {
   width: '100%',
@@ -14,7 +14,7 @@ const boxStyle = {
 
 export default function AuthLayout({ children }) {
   return (
-    <ConfigProvider theme={light}>
+    <ConfigProvider theme={theme.light}>
       <Flex style={boxStyle} justify={'space-around'} align={'center'}>
         {children}
       </Flex>

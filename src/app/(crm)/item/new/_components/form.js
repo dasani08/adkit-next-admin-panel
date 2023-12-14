@@ -21,7 +21,7 @@ export default function ItemForm() {
     <Card title="New Item">
       <Form labelAlign="left" labelCol={{ span: 6 }} colon={false}>
         <Row>
-          <Col span={12}>
+          <Col lg={12} md={24} sm={24} xs={24}>
             <Form.Item label="Type">
               <Checkbox.Group>
                 <Checkbox>Goods</Checkbox>
@@ -100,7 +100,7 @@ export default function ItemForm() {
               <Checkbox>Returnable Item</Checkbox>
             </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col lg={12} md={24} sm={24} xs={24}>
             <Dragger
               listType="picture-card"
               fileList={[
@@ -131,7 +131,7 @@ export default function ItemForm() {
         </Row>
         <Divider />
         <Row gutter={16}>
-          <Col span={12}>
+          <Col lg={12} md={24} sm={24} xs={24}>
             <Form.Item>
               <Checkbox>Sales Information</Checkbox>
             </Form.Item>
@@ -177,7 +177,7 @@ export default function ItemForm() {
               </Checkbox.Group>
             </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col lg={12} md={24} sm={24} xs={24}>
             <Form.Item>
               <Checkbox>Purchase Information</Checkbox>
             </Form.Item>

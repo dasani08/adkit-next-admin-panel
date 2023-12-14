@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Dropdown,
-  Row,
-  Col,
-  Table,
-  Space,
-} from 'antd';
+import { Dropdown, Row, Col, Table, Space } from 'antd';
 
 export const DEFAULT_COL_WIDTH = 100;
 export const DEFAULT_ITEM_PER_PAGE = 10;
 
 export const calculateTableWidth = (columns) => {
-  const tblWidth = columns
-    // .filter((column) => !column.fixed)
-    .reduce((width, column) => width + (column.width ?? DEFAULT_COL_WIDTH), 0);
+  const tblWidth = columns.reduce(
+    (width, column) => width + (column.width ?? DEFAULT_COL_WIDTH),
+    0,
+  );
   return `${tblWidth}px`;
 };
 
@@ -26,7 +21,7 @@ export default function CustomTable({
   name,
   pagination,
   showInfo = true,
-  showFilter = true,
+  showAction = true,
   selection = false,
   scroll = {},
   onSettingColumnsChanged,
@@ -57,7 +52,7 @@ export default function CustomTable({
           )}
           {rest.title && rest.title()}
         </Col>
-        {showFilter && (
+        {showAction && (
           <Col>
             <Space>
               {rest.extra}

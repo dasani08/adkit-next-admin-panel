@@ -28,8 +28,11 @@ import {
   ExclamationCircleFilled,
   ContainerOutlined,
   ContactsOutlined,
+  SettingOutlined,
+  LogoutOutlined,
 } from '@ant-design/icons';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 
 import { useAuth } from '@/state/auth/auth-context';
 import { useTheme } from '@/state/theme/theme-context';
@@ -53,7 +56,6 @@ export default function _Header() {
     logOut();
   };
   const screens = useBreakpoint();
-  console.log(screens);
   const [api, contextHolder] = notification.useNotification();
   const showAllNotication = () => {
     api.info({
@@ -181,17 +183,17 @@ export default function _Header() {
                   items={[
                     {
                       key: 'Item',
-                      label: 'New Item',
+                      label: <Link href={'/item/new'}>New Item</Link>,
                       icon: <ContainerOutlined />,
                     },
                     {
                       key: 'Customer',
-                      label: 'New Customer',
+                      label: <Link href={'/customer/new'}>New Customer</Link>,
                       icon: <ContactsOutlined />,
                     },
                     {
                       key: 'Email',
-                      label: 'New Email',
+                      label: <Link href={'/email/compose'}>New Email</Link>,
                       icon: <MailOutlined />,
                     },
                   ]}
@@ -245,8 +247,15 @@ export default function _Header() {
               menu={{
                 items: [
                   {
+                    key: 'Setting',
+                    label: <Link href={'/setting/org'}>Setting</Link>,
+                    icon: <SettingOutlined />,
+                  },
+                  {
                     key: 'Logout',
                     label: 'Logout',
+                    icon: <LogoutOutlined />,
+                    danger: true,
                   },
                 ],
                 onClick: ({ key }) => {

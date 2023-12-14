@@ -25,6 +25,8 @@ import {
   AuditOutlined,
 } from '@ant-design/icons';
 
+import useTableScroll from '@/lib/hooks/useTblScroll';
+
 const Toolbox = () => (
   <Space>
     <Space.Compact block>
@@ -81,6 +83,7 @@ const Toolbox = () => (
 );
 
 export default function InvoiceDetailPage({ invoiceNo }) {
+  const scrollX = useTableScroll();
   return (
     <Card title={invoiceNo} extra={<Toolbox />}>
       <Card.Grid
@@ -133,7 +136,7 @@ export default function InvoiceDetailPage({ invoiceNo }) {
           <Button icon={<EllipsisOutlined />} type="text" />
         </Space>
       </Card.Grid>
-      <Card.Grid style={{ width: '200%' }}>
+      <Card.Grid style={{ width: '100%' }}>
         <Alert
           message="Get the invoice approved"
           showIcon
@@ -149,7 +152,7 @@ export default function InvoiceDetailPage({ invoiceNo }) {
         <Flex justify="center" style={{ marginTop: 16 }}>
           <Flex
             style={{
-              width: 794,
+              minWidth: 794,
               padding: 16,
               borderRadius: 4,
               boxShadow: '0px 0px 4px 3px rgba(0,0,0,0.1)',
@@ -176,8 +179,13 @@ export default function InvoiceDetailPage({ invoiceNo }) {
             <Divider />
             <Row gutter={16}>
               <Col span={8}>
-                <Typography.Text strong>BILL TO</Typography.Text>
-                <Space direction="vertical" style={{ rowGap: 0 }}>
+                <Typography.Text strong style={{ marginRight: 8 }}>
+                  BILL TO
+                </Typography.Text>
+                <Space
+                  direction="vertical"
+                  style={{ rowGap: 0, marginLeft: 8 }}
+                >
                   <Typography.Text>Customer Name</Typography.Text>
                   <Typography.Text>Email Address</Typography.Text>
                   <Typography.Text>Phone Number</Typography.Text>
@@ -186,7 +194,9 @@ export default function InvoiceDetailPage({ invoiceNo }) {
                 </Space>
               </Col>
               <Col span={8}>
-                <Typography.Text strong>DETAILS</Typography.Text>
+                <Typography.Text strong style={{ marginRight: 8 }}>
+                  DETAILS
+                </Typography.Text>
                 <Space style={{ rowGap: 0 }}>
                   <Typography.Text>
                     Enter a brief description about your job or project
@@ -194,7 +204,9 @@ export default function InvoiceDetailPage({ invoiceNo }) {
                 </Space>
               </Col>
               <Col span={8}>
-                <Typography.Text strong>PAYMENT</Typography.Text>
+                <Typography.Text strong style={{ marginRight: 8 }}>
+                  PAYMENT
+                </Typography.Text>
                 <Space style={{ rowGap: 0 }}>
                   <Typography.Text>Due date mm/dd/yyyy</Typography.Text>
                   <Typography.Text>$0.00</Typography.Text>
@@ -203,6 +215,8 @@ export default function InvoiceDetailPage({ invoiceNo }) {
             </Row>
             <Divider />
             <Table
+              size="small"
+              scroll={{ x: scrollX }}
               columns={[
                 {
                   title: 'ITEM',

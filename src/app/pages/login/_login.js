@@ -1,6 +1,20 @@
 'use client';
 import React from 'react';
-import { Form, Input, Button } from 'antd';
+import {
+  Form,
+  Input,
+  Button,
+  Typography,
+  Space,
+  Checkbox,
+  Divider,
+} from 'antd';
+import {
+  GithubOutlined,
+  SlackOutlined,
+  FacebookOutlined,
+} from '@ant-design/icons';
+import LogoFull from '@/components/logo';
 
 export default function LoginForm() {
   return (
@@ -20,20 +34,38 @@ export default function LoginForm() {
       autoComplete="off"
       layout="vertical"
     >
-      <Form.Item style={{ textAlign: 'center', fontSize: 30 }}>
-        <h3>Login</h3>
+      <LogoFull fill={'#00B96B'} style={{ width: '100%', height: 44 }} />
+      <Form.Item style={{ textAlign: 'left' }}>
+        <h3 style={{ fontSize: 30, color: '#00804a' }}>Sign in</h3>
+        <Typography.Text type="secondary">
+          Don't have an account? <Typography.Link>Sign up</Typography.Link>
+        </Typography.Text>
       </Form.Item>
-      <Form.Item label="Email" name="email">
+      <Form.Item label="Email" name="email" rules={[{ required: true }]}>
         <Input type="email" />
       </Form.Item>
-      <Form.Item label="Password" name="password">
+      <Form.Item label="Password" name="password" rules={[{ required: true }]}>
         <Input.Password />
       </Form.Item>
       <Form.Item>
-        <Button type="primary" htmlType="submit">
-          Login
+        <Space style={{ width: '100%', justifyContent: 'space-between' }}>
+          <Checkbox>Remember me</Checkbox>
+          <Typography.Link>Forgot password?</Typography.Link>
+        </Space>
+      </Form.Item>
+      <Form.Item>
+        <Button block size="large" type="primary" htmlType="submit">
+          Sign in
         </Button>
       </Form.Item>
+      <Divider orientation="center">
+        <Typography.Text type="secondary">Or continue with</Typography.Text>
+      </Divider>
+      <Space align="center" style={{ width: '100%', justifyContent: 'center' }}>
+        <Button shape="round" size="large" icon={<GithubOutlined />} />
+        <Button shape="round" size="large" icon={<SlackOutlined />} />
+        <Button shape="round" size="large" icon={<FacebookOutlined />} />
+      </Space>
     </Form>
   );
 }
