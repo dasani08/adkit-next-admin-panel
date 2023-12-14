@@ -68,10 +68,11 @@
   <li>Location (leaftlet.js is being used to render the map)</li>
   <li>Calendar</li>
   <li>Settings</li>
+  <li>Pricing</li>
 </ul>
 
-<h4>API</h4>
-- The code was setting up to integrate with API via Axios library
+<h4>MOCK APIs</h4>
+- The code was setting up to integrate with Mock APIs via Axios library
 
 <h4>Demo</h4>
 
