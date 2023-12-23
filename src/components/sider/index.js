@@ -126,6 +126,11 @@ const items = [
       <LinkOutlined />,
     ),
     getItem(
+      <Link href={'/pages/second-login'}>Second Login</Link>,
+      'Second Login',
+      <LinkOutlined />,
+    ),
+    getItem(
       <Link href={'/pages/register'}>Register</Link>,
       'Register',
       <LinkOutlined />,

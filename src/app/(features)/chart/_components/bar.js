@@ -1,5 +1,4 @@
 'use client';
-import { randColor } from '@/lib/utils/color';
 import { Card } from 'antd';
 import {
   BarChart,

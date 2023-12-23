@@ -1,0 +1,15 @@
+# Documentation
+
+Document was built and deploy on Netlify https://adkit-admin-panel.netlify.app/
+
+# Run document locally
+
+Adkit document can run locally via below command
+
+```
+npm run doc
+```
+
+```
+yarn doc
+```

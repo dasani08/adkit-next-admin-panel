@@ -25,7 +25,7 @@ export default function OrganizationProfile() {
 
       <pre>
         <code className="language-javascript">
-          import ListPage from '@/components/list-page';
+          import ListPage from &apos;@/components/list-page&apos;;
         </code>
       </pre>
       <Typography.Title level={4}>Props</Typography.Title>

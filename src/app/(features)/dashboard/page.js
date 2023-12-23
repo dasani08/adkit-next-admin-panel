@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, Col, Row, Carousel, Button } from 'antd';
-import Image from 'next/image';
 
 import PageContent from '@/components/page-content';
 

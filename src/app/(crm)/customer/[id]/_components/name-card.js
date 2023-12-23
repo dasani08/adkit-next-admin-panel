@@ -9,7 +9,7 @@ import {
   Descriptions,
   Dropdown,
 } from 'antd';
-import { ArrowLeftOutlined, EllipsisOutlined } from '@ant-design/icons';
+import { EllipsisOutlined } from '@ant-design/icons';
 
 import BackBtn from '@/components/back-button';
 

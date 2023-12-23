@@ -60,7 +60,7 @@ export default function OrganizationProfile() {
       <Typography.Title level={3}>Table</Typography.Title>
       <pre>
         <code className="language-javascript">
-          import Table from '@/components/table';
+          import Table from &apos;@/components/table&apos;;
         </code>
       </pre>
       <Typography.Title level={4}>Props</Typography.Title>

@@ -38,7 +38,7 @@ export default function LoginForm() {
       <Form.Item style={{ textAlign: 'left' }}>
         <h3 style={{ fontSize: 30, color: '#00804a' }}>Sign in</h3>
         <Typography.Text type="secondary">
-          Don't have an account? <Typography.Link>Sign up</Typography.Link>
+          Don&apos;t have an account? <Typography.Link>Sign up</Typography.Link>
         </Typography.Text>
       </Form.Item>
       <Form.Item label="Email" name="email" rules={[{ required: true }]}>

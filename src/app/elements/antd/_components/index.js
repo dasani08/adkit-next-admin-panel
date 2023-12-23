@@ -1,5 +1,5 @@
 'use client';
-import { Card, Button, Typography, Row, Col } from 'antd';
+import { Card, Button, Typography } from 'antd';
 import { ExportOutlined } from '@ant-design/icons';
 import { useRouter } from 'next/navigation';
 

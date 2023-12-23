@@ -20,7 +20,6 @@ import {
   MailOutlined,
   LinkOutlined,
   DownOutlined,
-  ArrowLeftOutlined,
   FileTextOutlined,
 } from '@ant-design/icons';
 import Link from 'next/link';

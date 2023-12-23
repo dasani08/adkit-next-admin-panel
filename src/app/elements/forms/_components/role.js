@@ -2,7 +2,6 @@
 import React from 'react';
 import {
   Card,
-  Tooltip,
   Button,
   Form,
   Row,
@@ -15,7 +14,6 @@ import {
   Checkbox,
   message,
 } from 'antd';
-import { ArrowLeftOutlined } from '@ant-design/icons';
 import { useRouter } from 'next/navigation';
 import useTableScroll from '@/lib/hooks/useTblScroll';
 
